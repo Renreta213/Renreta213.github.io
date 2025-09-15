@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Library Reading Room</title>
+    <title>Library Reading Room</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -113,7 +113,6 @@
             width: 300px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
         
         .card:hover {
@@ -158,7 +157,6 @@
             position: relative;
             transform: rotate(0deg);
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
         
         .book:hover {
@@ -176,6 +174,7 @@
             font-weight: bold;
             writing-mode: vertical-rl;
             text-orientation: mixed;
+            cursor: pointer;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
         
@@ -274,7 +273,6 @@
             padding: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
         
         .free-book:hover {
@@ -379,7 +377,6 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
         }
         
         .kids-image img {
@@ -391,142 +388,6 @@
         
         .kids-image:hover img {
             transform: scale(1.05);
-        }
-        
-        /* Search bar */
-        .search-container {
-            margin: 30px 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .search-bar {
-            display: flex;
-            width: 100%;
-            max-width: 600px;
-        }
-        
-        .search-input {
-            flex: 1;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 10px 0 0 10px;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .search-btn {
-            padding: 15px 25px;
-            background: #5e35b1;
-            color: white;
-            border: none;
-            border-radius: 0 10px 10px 0;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .search-btn:hover {
-            background: #4527a0;
-        }
-        
-        /* Interactive elements */
-        .interactive-demo {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .demo-title {
-            color: #4527a0;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .book-preview {
-            width: 200px;
-            height: 280px;
-            background: #f5f5f5;
-            margin: 0 auto;
-            border-radius: 10px;
-            perspective: 1000px;
-            cursor: pointer;
-        }
-        
-        .book-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-        
-        .book-preview:hover .book-inner {
-            transform: rotateY(180deg);
-        }
-        
-        .book-front, .book-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 20px;
-        }
-        
-        .book-front {
-            background: linear-gradient(45deg, #3F51B5, #2196F3);
-            color: white;
-        }
-        
-        .book-back {
-            background: linear-gradient(45deg, #FF9800, #FFC107);
-            color: #333;
-            transform: rotateY(180deg);
-            text-align: center;
-        }
-        
-        /* Reading challenge */
-        .reading-challenge {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .challenge-title {
-            color: #4527a0;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .progress-container {
-            width: 100%;
-            background: #e0e0e0;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .progress-bar {
-            height: 30px;
-            background: linear-gradient(45deg, #4CAF50, #8BC34A);
-            border-radius: 10px;
-            width: 0%;
-            transition: width 1s ease;
-        }
-        
-        .challenge-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
         }
         
         /* Events page */
@@ -545,12 +406,6 @@
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: left;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .event-card:hover {
-            transform: translateY(-5px);
         }
         
         .event-date {
@@ -577,12 +432,6 @@
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: left;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-5px);
         }
         
         .program-card h3 {
@@ -606,50 +455,11 @@
             width: 250px;
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .donation-option:hover {
-            transform: translateY(-5px);
         }
         
         .donation-option h3 {
             color: #5e35b1;
             margin-bottom: 15px;
-        }
-        
-        /* Book details modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #5e35b1;
         }
         
         @media (max-width: 768px) {
@@ -720,14 +530,6 @@
                 <p class="tagline">A Sanctuary for Knowledge and Imagination</p>
             </div>
             
-            <!-- Search Bar -->
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" class="search-input" placeholder="Search for books, authors, or topics...">
-                    <button class="search-btn"><i class="fas fa-search"></i> Search</button>
-                </div>
-            </div>
-            
             <div class="quote">
                 <i class="fas fa-quote-left"></i>
                 The reading room is a sanctuary where minds expand and imaginations flourish
@@ -735,19 +537,19 @@
             </div>
             
             <div class="library-content">
-                <div class="card" onclick="showModal('Extensive Collection', 'Explore our vast collection of books, journals, and digital resources covering every topic imaginable.')">
+                <div class="card">
                     <i class="fas fa-book-open"></i>
                     <h3>Extensive Collection</h3>
                     <p>Explore our vast collection of books, journals, and digital resources covering every topic imaginable.</p>
                 </div>
                 
-                <div class="card" onclick="showModal('24/7 Access', 'Our digital resources are available around the clock. Physical reading room open from 8 AM to 10 PM.')">
+                <div class="card">
                     <i class="fas fa-clock"></i>
                     <h3>24/7 Access</h3>
                     <p>Our digital resources are available around the clock. Physical reading room open from 8 AM to 10 PM.</p>
                 </div>
                 
-                <div class="card" onclick="showModal('Community Space', 'Join book clubs, attend author talks, and connect with fellow reading enthusiasts in our welcoming space.')">
+                <div class="card">
                     <i class="fas fa-users"></i>
                     <h3>Community Space</h3>
                     <p>Join book clubs, attend author talks, and connect with fellow reading enthusiasts in our welcoming space.</p>
@@ -755,64 +557,26 @@
             </div>
             
             <div class="bookshelf">
-                <div class="book" onclick="showBookDetail('Fiction', 'Explore imaginative stories from around the world. From classics to contemporary bestsellers.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #FF5252, #FF4081);">Fiction</div>
                 </div>
-                <div class="book" onclick="showBookDetail('Science', 'Discover the wonders of the universe with our science collection.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">Science</div>
                 </div>
-                <div class="book" onclick="showBookDetail('History', 'Journey through time with our historical accounts and biographies.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #FF9800, #FFC107);">History</div>
                 </div>
-                <div class="book" onclick="showBookDetail('Art', 'Explore visual arts, music, and creative expression.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #9C27B0, #673AB7);">Art</div>
                 </div>
-                <div class="book" onclick="showBookDetail('Poetry', 'Experience the beauty of language through verse.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #00BCD4, #009688);">Poetry</div>
                 </div>
-                <div class="book" onclick="showBookDetail('Travel', 'Discover new places and cultures through our travel section.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #3F51B5, #2196F3);">Travel</div>
                 </div>
-                <div class="book" onclick="showBookDetail('Biography', 'Read about remarkable lives and inspiring stories.')">
+                <div class="book">
                     <div class="book-spine" style="background: linear-gradient(45deg, #795548, #FF5722);">Biography</div>
-                </div>
-            </div>
-            
-            <!-- Interactive Demo -->
-            <div class="interactive-demo">
-                <h2 class="demo-title">Interactive Book Preview</h2>
-                <p>Hover over the book to see what's inside!</p>
-                <div class="book-preview">
-                    <div class="book-inner">
-                        <div class="book-front">
-                            <i class="fas fa-book" style="font-size: 3rem; margin-bottom: 15px;"></i>
-                            <h3>Adventure Awaits</h3>
-                            <p>By J.K. Reader</p>
-                        </div>
-                        <div class="book-back">
-                            <h4>Chapter 1</h4>
-                            <p>It was a dark and stormy night when Emma first discovered the mysterious book that would change her life forever...</p>
-                            <button class="btn" style="margin-top: 15px;">Read More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Reading Challenge -->
-            <div class="reading-challenge">
-                <h2 class="challenge-title">2023 Reading Challenge</h2>
-                <p>Set your reading goal and track your progress throughout the year!</p>
-                
-                <div class="progress-container">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-                
-                <p id="progressText">You've read 0 out of 12 books (0%)</p>
-                
-                <div class="challenge-buttons">
-                    <button class="btn" onclick="updateProgress(1)">+1 Book</button>
-                    <button class="btn" onclick="resetProgress()">Reset</button>
-                    <button class="btn" onclick="setGoal()">Set Goal</button>
                 </div>
             </div>
             
@@ -823,9 +587,9 @@
                     <p>At our library, we believe in nurturing a love for reading from an early age. Our children's section is specially designed to be welcoming and engaging for young readers.</p>
                     <p>We offer weekly storytime sessions, reading challenges, and educational activities that make learning fun. Our dedicated children's librarians are always available to help find the perfect book for every child.</p>
                     <p>Seeing children discover the joy of reading is one of our greatest rewards. We're committed to creating a new generation of lifelong learners and readers.</p>
-                    <button class="btn" onclick="showModal('Youth Programs', 'We offer: Storytime every Tuesday and Thursday at 10 AM, Summer Reading Challenge, Homework Help, and Reading Buddies mentorship program.')">Learn About Our Youth Programs</button>
+                    <button class="btn">Learn About Our Youth Programs</button>
                 </div>
-                <div class="kids-image" onclick="showModal('Children Reading', 'Our library provides a safe and stimulating environment for children to explore the world of books.')">
+                <div class="kids-image">
                     <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Happy children reading books in the library">
                 </div>
             </div>
@@ -838,19 +602,19 @@
             </div>
             
             <div class="library-content">
-                <div class="card" onclick="showModal('Learning Resources', 'Access our extensive collection of educational materials, from textbooks to research databases.')">
+                <div class="card">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Learning Resources</h3>
                     <p>Access our extensive collection of educational materials, from textbooks to research databases.</p>
                 </div>
                 
-                <div class="card" onclick="showModal('Digital Access', 'Use our computers and free Wi-Fi, or access our digital collection from anywhere with an internet connection.')">
+                <div class="card">
                     <i class="fas fa-laptop"></i>
                     <h3>Digital Access</h3>
                     <p>Use our computers and free Wi-Fi, or access our digital collection from anywhere with an internet connection.</p>
                 </div>
                 
-                <div class="card" onclick="showModal('Community Events', 'Join us for author talks, workshops, book clubs, and special events for all ages throughout the year.')">
+                <div class="card">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>Community Events</h3>
                     <p>Join us for author talks, workshops, book clubs, and special events for all ages throughout the year.</p>
@@ -858,22 +622,221 @@
             </div>
         </div>
         
-        <!-- Other page sections (About, Nonprofit, Free Books, etc.) would go here -->
-        <!-- This example focuses on the interactive home page -->
+        <!-- About Us Page -->
+        <div class="page-section" id="about">
+            <h2>About Our Library</h2>
+            <p>Founded in 1995, the Library Reading Room began as a small community initiative with just 200 books. Today, we have grown to become a cherished community resource with over 50,000 physical books and 100,000 digital resources.</p>
+            
+            <div class="colorful-books">
+                <div class="color-book" style="background: linear-gradient(45deg, #FF5252, #FF4081);">Fiction</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">Science</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #FF9800, #FFC107);">History</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #9C27B0, #673AB7);">Art</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #00BCD4, #009688);">Poetry</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #3F51B5, #2196F3);">Travel</div>
+            </div>
+            
+            <p>Our mission has always been to make knowledge and literature accessible to everyone, regardless of their background or financial situation. We believe that access to books and a quiet space for study and reflection is a right, not a privilege.</p>
+            
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                Libraries store the energy that fuels the imagination. They open up windows to the world and inspire us to explore and achieve.
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+        
+        <!-- Nonprofit Mission Page -->
+        <div class="page-section" id="nonprofit">
+            <h2>Our Nonprofit Mission</h2>
+            <p>As a registered 501(c)(3) nonprofit organization, the Library Reading Room is dedicated to providing free access to educational resources for all members of our community. We are funded through donations, grants, and the generous support of volunteers.</p>
+            
+            <div class="colorful-books">
+                <div class="color-book" style="background: linear-gradient(45deg, #FF6B35, #FF8E53);">Free Access</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #4EA1D3, #7BB2D9);">Community</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #453F78, #6A67CE);">Education</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #FF4081, #E91E63);">Equality</div>
+            </div>
+            
+            <p>Our initiatives include:</p>
+            <ul style="text-align: left; margin-left: 30px; line-height: 1.8;">
+                <li>Free literacy programs for adults and children</li>
+                <li>Community outreach to underserved neighborhoods</li>
+                <li>Digital access programs providing free computers and internet</li>
+                <li>Multilingual resources for non-native English speakers</li>
+                <li>Accessibility services for patrons with disabilities</li>
+            </ul>
+            
+            <button class="btn">Donate to Support Our Mission</button>
+            <button class="btn">Volunteer With Us</button>
+        </div>
+        
+        <!-- Free Books Page -->
+        <div class="page-section" id="freebooks">
+            <h2>Free Books & Resources</h2>
+            <p>We are proud to offer a wide selection of free books and resources to our community. Below are some of our most popular free offerings:</p>
+            
+            <div class="free-books">
+                <div class="free-book">
+                    <img src="https://placehold.co/200x300/FF5252/white?text=Classics" alt="Classic Literature">
+                    <h4>Classic Literature</h4>
+                    <p>Timeless works from authors like Austen, Dickens, and Twain</p>
+                </div>
+                
+                <div class="free-book">
+                    <img src="https://placehold.co/200x300/4CAF50/white?text=Children" alt="Children's Books">
+                    <h4>Children's Books</h4>
+                    <p>Engaging stories for young readers of all ages</p>
+                </div>
+                
+                <div class="free-book">
+                    <img src="https://placehold.co/200x300/2196F3/white?text=Education" alt="Educational Resources">
+                    <h4>Educational Resources</h4>
+                    <p>Textbooks and study materials for students</p>
+                </div>
+                
+                <div class="free-book">
+                    <img src="https://placehold.co/200x300/9C27B0/white?text=E-books" alt="Digital Library">
+                    <h4>Digital Library</h4>
+                    <p>Thousands of e-books available for free download</p>
+                </div>
+            </div>
+            
+            <p>All our books are available to borrow at no cost. We also have a "Keep It" section where books are available to take home permanently without needing to return them.</p>
+            
+            <button class="btn">Browse Our Full Collection</button>
+            <button class="btn">Download Free E-books</button>
+        </div>
+        
+        <!-- Events Page -->
+        <div class="page-section" id="events">
+            <h2>Upcoming Events</h2>
+            <p>Join us for these exciting upcoming events at the Library Reading Room. All events are free and open to the public.</p>
+            
+            <div class="events-calendar">
+                <div class="event-card">
+                    <span class="event-date">June 15</span>
+                    <h3>Author Reading: Jane Smith</h3>
+                    <p>Join award-winning author Jane Smith as she reads from her latest novel and discusses her writing process.</p>
+                    <p><i class="fas fa-clock"></i> 6:00 PM - 7:30 PM</p>
+                </div>
+                
+                <div class="event-card">
+                    <span class="event-date">June 22</span>
+                    <h3>Children's Story Hour</h3>
+                    <p>Bring your little ones for a magical story hour featuring beloved children's books and interactive activities.</p>
+                    <p><i class="fas fa-clock"></i> 10:00 AM - 11:00 AM</p>
+                </div>
+                
+                <div class="event-card">
+                    <span class="event-date">July 5</span>
+                    <h3>Poetry Night</h3>
+                    <p>Share your own work or enjoy readings from local poets at our monthly poetry night. All are welcome!</p>
+                    <p><i class="fas fa-clock"></i> 7:00 PM - 9:00 PM</p>
+                </div>
+            </div>
+            
+            <button class="btn">View Full Events Calendar</button>
+        </div>
+        
+        <!-- Programs Page -->
+        <div class="page-section" id="programs">
+            <h2>Library Programs</h2>
+            <p>We offer a variety of educational and community programs for all ages. Explore our ongoing programs below.</p>
+            
+            <div class="program-grid">
+                <div class="program-card">
+                    <h3>Adult Literacy</h3>
+                    <p>Our free adult literacy program offers one-on-one tutoring for adults looking to improve their reading and writing skills.</p>
+                    <p><strong>Schedule:</strong> Tuesdays & Thursdays, 6-8 PM</p>
+                </div>
+                
+                <div class="program-card">
+                    <h3>Homework Help</h3>
+                    <p>Students can get free homework assistance from trained volunteers after school in our dedicated study area.</p>
+                    <p><strong>Schedule:</strong> Mon-Fri, 3-6 PM</p>
+                </div>
+                
+                <div class="program-card">
+                    <h3>Digital Literacy</h3>
+                    <p>Learn computer basics, internet skills, and how to use library digital resources in our technology classes.</p>
+                    <p><strong>Schedule:</strong> Wednesdays, 10 AM-12 PM</p>
+                </div>
+                
+                <div class="program-card">
+                    <h3>Book Clubs</h3>
+                    <p>Join one of our many book clubs focusing on different genres and meet fellow reading enthusiasts.</p>
+                    <p><strong>Schedule:</strong> Various times throughout the month</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Support Us Page -->
+        <div class="page-section" id="support">
+            <h2>Support Our Library</h2>
+            <p>As a nonprofit organization, we rely on the generosity of our community to continue providing free access to knowledge and resources. There are many ways to support our mission.</p>
+            
+            <div class="donation-options">
+                <div class="donation-option">
+                    <h3>Become a Member</h3>
+                    <p>Join our membership program with monthly or annual contributions that help sustain our operations.</p>
+                    <button class="btn">Learn More</button>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>One-Time Donation</h3>
+                    <p>Make a one-time financial contribution to support our programs and services.</p>
+                    <button class="btn">Donate Now</button>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>Volunteer</h3>
+                    <p>Share your time and skills by volunteering at the library. We have opportunities for all ages.</p>
+                    <button class="btn">Volunteer</button>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                A library is not a luxury but one of the necessities of life. Your support helps ensure everyone has access to this necessity.
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+        
+        <!-- Contact Page -->
+        <div class="page-section" id="contact">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have questions, want to volunteer, or need assistance, our team is here to help.</p>
+            
+            <div class="library-content">
+                <div class="card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>123 Knowledge Avenue<br>Learning City, LC 12345</p>
+                </div>
+                
+                <div class="card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>(555) 123-4567<br>Mon-Fri: 9am-5pm</p>
+                </div>
+                
+                <div class="card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>info@libraryreadingroom.org<br>support@libraryreadingroom.org</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                A library is not a luxury but one of the necessities of life.
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
         
         <div class="footer">
             <p>© 2023 Library Reading Room | Visit us: 123 Knowledge Avenue, Learning City</p>
             <p>A 501(c)(3) Nonprofit Organization | EIN: 12-3456789</p>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal" id="bookModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalContent"></p>
-            <button class="btn" onclick="closeModal()">Close</button>
         </div>
     </div>
 
@@ -932,74 +895,6 @@
                 const pageId = this.getAttribute('data-page');
                 document.getElementById(pageId).classList.add('active');
             });
-        });
-        
-        // Reading Challenge
-        let booksRead = 0;
-        let readingGoal = 12;
-        
-        function updateProgress(count) {
-            booksRead += count;
-            if (booksRead > readingGoal) booksRead = readingGoal;
-            
-            const percentage = (booksRead / readingGoal) * 100;
-            document.getElementById('progressBar').style.width = `${percentage}%`;
-            document.getElementById('progressText').textContent = 
-                `You've read ${booksRead} out of ${readingGoal} books (${Math.round(percentage)}%)`;
-        }
-        
-        function resetProgress() {
-            booksRead = 0;
-            updateProgress(0);
-        }
-        
-        function setGoal() {
-            const newGoal = prompt('Set your reading goal for this year:', readingGoal);
-            if (newGoal && !isNaN(newGoal) && newGoal > 0) {
-                readingGoal = parseInt(newGoal);
-                updateProgress(0);
-            }
-        }
-        
-        // Initialize progress bar
-        updateProgress(0);
-        
-        // Modal functionality
-        function showModal(title, content) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalContent').textContent = content;
-            document.getElementById('bookModal').style.display = 'flex';
-        }
-        
-        function showBookDetail(genre, description) {
-            showModal(genre + ' Books', description);
-        }
-        
-        function closeModal() {
-            document.getElementById('bookModal').style.display = 'none';
-        }
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            const modal = document.getElementById('bookModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-        
-        // Search functionality
-        document.querySelector('.search-btn').addEventListener('click', function() {
-            const searchTerm = document.querySelector('.search-input').value;
-            if (searchTerm) {
-                showModal('Search Results', `You searched for: "${searchTerm}". In a real application, this would show results from the library database.`);
-            }
-        });
-        
-        // Allow Enter key to trigger search
-        document.querySelector('.search-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.querySelector('.search-btn').click();
-            }
         });
     </script>
 </body>
