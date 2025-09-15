@@ -157,6 +157,7 @@
             position: relative;
             transform: rotate(0deg);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         
         .book:hover {
@@ -174,7 +175,6 @@
             font-weight: bold;
             writing-mode: vertical-rl;
             text-orientation: mixed;
-            cursor: pointer;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
         
@@ -462,6 +462,114 @@
             margin-bottom: 15px;
         }
         
+        /* Book search section */
+        .book-search {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .search-input {
+            padding: 12px 20px;
+            width: 60%;
+            border: 2px solid #5e35b1;
+            border-radius: 8px 0 0 8px;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        
+        .search-btn {
+            background: #5e35b1;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .search-results {
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .result-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-item h4 {
+            color: #5e35b1;
+            margin-bottom: 5px;
+        }
+        
+        .read-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1565c0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .read-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Modal for book links */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #5e35b1;
+        }
+        
+        .book-links {
+            margin-top: 20px;
+        }
+        
+        .book-link-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .book-link-item:last-child {
+            border-bottom: none;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 3rem;
@@ -497,6 +605,10 @@
             
             .kids-content {
                 text-align: center;
+            }
+            
+            .search-input {
+                width: 70%;
             }
         }
     </style>
@@ -557,26 +669,41 @@
             </div>
             
             <div class="bookshelf">
-                <div class="book">
+                <div class="book" data-genre="fiction">
                     <div class="book-spine" style="background: linear-gradient(45deg, #FF5252, #FF4081);">Fiction</div>
                 </div>
-                <div class="book">
+                <div class="book" data-genre="science">
                     <div class="book-spine" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">Science</div>
                 </div>
-                <div class="book">
+                <div class="book" data-genre="history">
                     <div class="book-spine" style="background: linear-gradient(45deg, #FF9800, #FFC107);">History</div>
                 </div>
-                <div class="book">
+                <div class="book" data-genre="art">
                     <div class="book-spine" style="background: linear-gradient(45deg, #9C27B0, #673AB7);">Art</div>
                 </div>
-                <div class="book">
+                <div class="book" data-genre="poetry">
                     <div class="book-spine" style="background: linear-gradient(45deg, #00BCD4, #009688);">Poetry</div>
                 </div>
-                <div class="book">
+                <div class="book" data-genre="travel">
                     <div class="book-spine" style="background: linear-gradient(45deg, #3F51B5, #2196F3);">Travel</div>
                 </div>
-                <div class="book">
+                <div class="book" data-genre="biography">
                     <div class="book-spine" style="background: linear-gradient(45deg, #795548, #FF5722);">Biography</div>
+                </div>
+            </div>
+            
+            <!-- Book Search Section -->
+            <div class="book-search">
+                <h2>Find Free Books to Read</h2>
+                <p>Search our collection of free online books available from various sources</p>
+                
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search for books by title, author, or genre...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="search-results">
+                    <!-- Results will be populated by JavaScript -->
                 </div>
             </div>
             
@@ -628,12 +755,12 @@
             <p>Founded in 1995, the Library Reading Room began as a small community initiative with just 200 books. Today, we have grown to become a cherished community resource with over 50,000 physical books and 100,000 digital resources.</p>
             
             <div class="colorful-books">
-                <div class="color-book" style="background: linear-gradient(45deg, #FF5252, #FF4081);">Fiction</div>
-                <div class="color-book" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">Science</div>
-                <div class="color-book" style="background: linear-gradient(45deg, #FF9800, #FFC107);">History</div>
-                <div class="color-book" style="background: linear-gradient(45deg, #9C27B0, #673AB7);">Art</div>
-                <div class="color-book" style="background: linear-gradient(45deg, #00BCD4, #009688);">Poetry</div>
-                <div class="color-book" style="background: linear-gradient(45deg, #3F51B5, #2196F3);">Travel</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #FF5252, #FF4081);" data-genre="fiction">Fiction</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);" data-genre="science">Science</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #FF9800, #FFC107);" data-genre="history">History</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #9C27B0, #673AB7);" data-genre="art">Art</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #00BCD4, #009688);" data-genre="poetry">Poetry</div>
+                <div class="color-book" style="background: linear-gradient(45deg, #3F51B5, #2196F3);" data-genre="travel">Travel</div>
             </div>
             
             <p>Our mission has always been to make knowledge and literature accessible to everyone, regardless of their background or financial situation. We believe that access to books and a quiet space for study and reflection is a right, not a privilege.</p>
@@ -680,24 +807,28 @@
                     <img src="https://placehold.co/200x300/FF5252/white?text=Classics" alt="Classic Literature">
                     <h4>Classic Literature</h4>
                     <p>Timeless works from authors like Austen, Dickens, and Twain</p>
+                    <a href="#" class="read-link" data-genre="classics">Read Free Classics</a>
                 </div>
                 
                 <div class="free-book">
                     <img src="https://placehold.co/200x300/4CAF50/white?text=Children" alt="Children's Books">
                     <h4>Children's Books</h4>
                     <p>Engaging stories for young readers of all ages</p>
+                    <a href="#" class="read-link" data-genre="children">Read Children's Books</a>
                 </div>
                 
                 <div class="free-book">
                     <img src="https://placehold.co/200x300/2196F3/white?text=Education" alt="Educational Resources">
                     <h4>Educational Resources</h4>
                     <p>Textbooks and study materials for students</p>
+                    <a href="#" class="read-link" data-genre="education">Access Educational Books</a>
                 </div>
                 
                 <div class="free-book">
                     <img src="https://placehold.co/200x300/9C27B0/white?text=E-books" alt="Digital Library">
                     <h4>Digital Library</h4>
                     <p>Thousands of e-books available for free download</p>
+                    <a href="#" class="read-link" data-genre="ebooks">Browse E-books</a>
                 </div>
             </div>
             
@@ -815,87 +946,4 @@
                 </div>
                 
                 <div class="card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Call Us</h3>
-                    <p>(555) 123-4567<br>Mon-Fri: 9am-5pm</p>
-                </div>
-                
-                <div class="card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>info@libraryreadingroom.org<br>support@libraryreadingroom.org</p>
-                </div>
-            </div>
-            
-            <div class="quote">
-                <i class="fas fa-quote-left"></i>
-                A library is not a luxury but one of the necessities of life.
-                <i class="fas fa-quote-right"></i>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>© 2023 Library Reading Room | Visit us: 123 Knowledge Avenue, Learning City</p>
-            <p>A 501(c)(3) Nonprofit Organization | EIN: 12-3456789</p>
-        </div>
-    </div>
-
-    <script>
-        // Create floating book icons
-        const bookIcons = ['📚', '📖', '📕', '📗', '📘', '📙', '🔖'];
-        const floatingBooks = document.getElementById('floatingBooks');
-        
-        for (let i = 0; i < 20; i++) {
-            const book = document.createElement('div');
-            book.className = 'floating-book';
-            book.textContent = bookIcons[Math.floor(Math.random() * bookIcons.length)];
-            
-            const left = Math.random() * 100;
-            const animationDuration = (Math.random() * 20) + 15;
-            const fontSize = (Math.random() * 20) + 30;
-            
-            book.style.left = `${left}%`;
-            book.style.animationDuration = `${animationDuration}s`;
-            book.style.fontSize = `${fontSize}px`;
-            book.style.opacity = 0.1 + (Math.random() * 0.3);
-            book.style.animationDelay = `${Math.random() * 5}s`;
-            
-            floatingBooks.appendChild(book);
-        }
-        
-        // Add interaction to books on the shelf
-        const books = document.querySelectorAll('.book');
-        books.forEach(book => {
-            book.addEventListener('click', function() {
-                this.style.transform = 'rotate(-5deg) scale(1.1)';
-                setTimeout(() => {
-                    this.style.transform = 'rotate(0deg) scale(1)';
-                }, 1000);
-            });
-        });
-        
-        // Navigation functionality
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const pageSections = document.querySelectorAll('.page-section');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all links
-                navLinks.forEach(link => link.classList.remove('active'));
-                
-                // Add active class to clicked link
-                this.classList.add('active');
-                
-                // Hide all page sections
-                pageSections.forEach(section => section.classList.remove('active'));
-                
-                // Show the selected page section
-                const pageId = this.getAttribute('data-page');
-                document.getElementById(pageId).classList.add('active');
-            });
-        });
-    </script>
-</body>
-</html>
+                    <i class="fas
