@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Library Reading Room</title>
+    <title>Interactive Library Reading Room</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -259,227 +259,397 @@
             text-align: left;
         }
         
-        /* Free Books Section - Enhanced */
-        .free-books-section {
-            background: rgba(255, 255, 255, 0.9);
+        .free-books {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .free-book {
+            background: white;
+            border-radius: 10px;
+            width: 200px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .free-book:hover {
+            transform: scale(1.05);
+        }
+        
+        .free-book img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .free-book h4 {
+            color: #5e35b1;
+            margin-bottom: 5px;
+        }
+        
+        .free-book p {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .btn {
+            background: #5e35b1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            background: #4527a0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* New colorful book styles */
+        .colorful-books {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .color-book {
+            width: 140px;
+            height: 180px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .color-book:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        /* Kids reading section */
+        .kids-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
-            padding: 40px;
+        }
+        
+        .kids-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .kids-content h2 {
+            color: #4527a0;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .kids-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        
+        .kids-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .kids-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Search bar */
+        .search-container {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .search-bar {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px 0 0 10px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-btn {
+            padding: 15px 25px;
+            background: #5e35b1;
+            color: white;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background: #4527a0;
+        }
+        
+        /* Interactive elements */
+        .interactive-demo {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
             margin: 40px 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-header h2 {
+        .demo-title {
             color: #4527a0;
-            font-size: 2.8rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         
-        .section-header p {
-            color: #5e35b1;
-            font-size: 1.2rem;
-            max-width: 800px;
+        .book-preview {
+            width: 200px;
+            height: 280px;
+            background: #f5f5f5;
             margin: 0 auto;
-            text-align: center;
-        }
-        
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-        
-        .category-tab {
-            padding: 12px 25px;
-            background: #e1bee7;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #5e35b1;
+            border-radius: 10px;
+            perspective: 1000px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .category-tab:hover {
-            background: #ce93d8;
-            transform: translateY(-3px);
+        .book-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
         }
         
-        .category-tab.active {
-            background: #5e35b1;
+        .book-preview:hover .book-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .book-front, .book-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .book-front {
+            background: linear-gradient(45deg, #3F51B5, #2196F3);
             color: white;
         }
         
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+        .book-back {
+            background: linear-gradient(45deg, #FF9800, #FFC107);
+            color: #333;
+            transform: rotateY(180deg);
+            text-align: center;
+        }
+        
+        /* Reading challenge */
+        .reading-challenge {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .challenge-title {
+            color: #4527a0;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .progress-container {
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 30px;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+        
+        .challenge-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-top: 20px;
         }
         
-        .book-card {
+        /* Events page */
+        .events-calendar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .event-card {
             background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .book-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .book-cover {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .book-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .book-card:hover .book-cover img {
-            transform: scale(1.1);
-        }
-        
-        .book-category {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(94, 53, 177, 0.9);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .book-details {
+            border-radius: 10px;
+            width: 300px;
             padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
-        .book-title {
-            color: #4527a0;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .event-card:hover {
+            transform: translateY(-5px);
         }
         
-        .book-author {
-            color: #7b1fa2;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-        
-        .book-description {
-            color: #37474f;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            flex-grow: 1;
-        }
-        
-        .book-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .read-btn {
+        .event-date {
             background: #5e35b1;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 15px;
             display: inline-block;
         }
         
-        .read-btn:hover {
-            background: #4527a0;
-            transform: translateY(-2px);
+        /* Programs page */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
         }
         
-        .book-meta {
-            display: flex;
-            align-items: center;
-            color: #78909c;
-            font-size: 0.9rem;
-        }
-        
-        .book-meta i {
-            margin-right: 5px;
-        }
-        
-        .view-more {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .view-more-btn {
-            background: linear-gradient(45deg, #5e35b1, #9c27b0);
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
         
-        .view-more-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        .program-card:hover {
+            transform: translateY(-5px);
         }
         
-        /* Decorative elements */
-        .decorative-element {
-            width: 100px;
-            height: 100px;
+        .program-card h3 {
+            color: #5e35b1;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Support page */
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .donation-option {
+            background: white;
+            border-radius: 10px;
+            width: 250px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-option:hover {
+            transform: translateY(-5px);
+        }
+        
+        .donation-option h3 {
+            color: #5e35b1;
+            margin-bottom: 15px;
+        }
+        
+        /* Book details modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-modal {
             position: absolute;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        
-        .dec-1 {
-            top: 20%;
-            left: 5%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%235e35b1' d='M50 10 L75 80 L25 80 Z'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        
-        .dec-2 {
-            top: 60%;
-            right: 5%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle fill='%23ffeb3b' cx='50' cy='50' r='40'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #5e35b1;
         }
         
         @media (max-width: 768px) {
@@ -511,26 +681,18 @@
                 margin: 5px;
             }
             
-            .books-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .category-tabs {
+            .kids-section {
                 flex-direction: column;
-                align-items: center;
             }
             
-            .category-tab {
-                width: 80%;
-                margin-bottom: 10px;
+            .kids-content {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="floating-books" id="floatingBooks"></div>
-    <div class="decorative-element dec-1"></div>
-    <div class="decorative-element dec-2"></div>
     
     <!-- Navigation -->
     <nav class="navbar">
@@ -558,6 +720,14 @@
                 <p class="tagline">A Sanctuary for Knowledge and Imagination</p>
             </div>
             
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search for books, authors, or topics...">
+                    <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
+            
             <div class="quote">
                 <i class="fas fa-quote-left"></i>
                 The reading room is a sanctuary where minds expand and imaginations flourish
@@ -571,4 +741,266 @@
                     <p>Explore our vast collection of books, journals, and digital resources covering every topic imaginable.</p>
                 </div>
                 
-                <div class="card" onclick="showModal('24/7 Access', 'Our digital resources are available around the clock. Physical reading room open from 8 AM to 10
+                <div class="card" onclick="showModal('24/7 Access', 'Our digital resources are available around the clock. Physical reading room open from 8 AM to 10 PM.')">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Access</h3>
+                    <p>Our digital resources are available around the clock. Physical reading room open from 8 AM to 10 PM.</p>
+                </div>
+                
+                <div class="card" onclick="showModal('Community Space', 'Join book clubs, attend author talks, and connect with fellow reading enthusiasts in our welcoming space.')">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Space</h3>
+                    <p>Join book clubs, attend author talks, and connect with fellow reading enthusiasts in our welcoming space.</p>
+                </div>
+            </div>
+            
+            <div class="bookshelf">
+                <div class="book" onclick="showBookDetail('Fiction', 'Explore imaginative stories from around the world. From classics to contemporary bestsellers.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #FF5252, #FF4081);">Fiction</div>
+                </div>
+                <div class="book" onclick="showBookDetail('Science', 'Discover the wonders of the universe with our science collection.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">Science</div>
+                </div>
+                <div class="book" onclick="showBookDetail('History', 'Journey through time with our historical accounts and biographies.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #FF9800, #FFC107);">History</div>
+                </div>
+                <div class="book" onclick="showBookDetail('Art', 'Explore visual arts, music, and creative expression.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #9C27B0, #673AB7);">Art</div>
+                </div>
+                <div class="book" onclick="showBookDetail('Poetry', 'Experience the beauty of language through verse.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #00BCD4, #009688);">Poetry</div>
+                </div>
+                <div class="book" onclick="showBookDetail('Travel', 'Discover new places and cultures through our travel section.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #3F51B5, #2196F3);">Travel</div>
+                </div>
+                <div class="book" onclick="showBookDetail('Biography', 'Read about remarkable lives and inspiring stories.')">
+                    <div class="book-spine" style="background: linear-gradient(45deg, #795548, #FF5722);">Biography</div>
+                </div>
+            </div>
+            
+            <!-- Interactive Demo -->
+            <div class="interactive-demo">
+                <h2 class="demo-title">Interactive Book Preview</h2>
+                <p>Hover over the book to see what's inside!</p>
+                <div class="book-preview">
+                    <div class="book-inner">
+                        <div class="book-front">
+                            <i class="fas fa-book" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <h3>Adventure Awaits</h3>
+                            <p>By J.K. Reader</p>
+                        </div>
+                        <div class="book-back">
+                            <h4>Chapter 1</h4>
+                            <p>It was a dark and stormy night when Emma first discovered the mysterious book that would change her life forever...</p>
+                            <button class="btn" style="margin-top: 15px;">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reading Challenge -->
+            <div class="reading-challenge">
+                <h2 class="challenge-title">2023 Reading Challenge</h2>
+                <p>Set your reading goal and track your progress throughout the year!</p>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                
+                <p id="progressText">You've read 0 out of 12 books (0%)</p>
+                
+                <div class="challenge-buttons">
+                    <button class="btn" onclick="updateProgress(1)">+1 Book</button>
+                    <button class="btn" onclick="resetProgress()">Reset</button>
+                    <button class="btn" onclick="setGoal()">Set Goal</button>
+                </div>
+            </div>
+            
+            <!-- Kids Reading Section -->
+            <div class="kids-section">
+                <div class="kids-content">
+                    <h2>Inspiring Young Minds</h2>
+                    <p>At our library, we believe in nurturing a love for reading from an early age. Our children's section is specially designed to be welcoming and engaging for young readers.</p>
+                    <p>We offer weekly storytime sessions, reading challenges, and educational activities that make learning fun. Our dedicated children's librarians are always available to help find the perfect book for every child.</p>
+                    <p>Seeing children discover the joy of reading is one of our greatest rewards. We're committed to creating a new generation of lifelong learners and readers.</p>
+                    <button class="btn" onclick="showModal('Youth Programs', 'We offer: Storytime every Tuesday and Thursday at 10 AM, Summer Reading Challenge, Homework Help, and Reading Buddies mentorship program.')">Learn About Our Youth Programs</button>
+                </div>
+                <div class="kids-image" onclick="showModal('Children Reading', 'Our library provides a safe and stimulating environment for children to explore the world of books.')">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Happy children reading books in the library">
+                </div>
+            </div>
+            
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                There is more treasure in books than in all the pirate's loot on Treasure Island.
+                <i class="fas fa-quote-right"></i>
+                <p style="text-align: center; margin-top: 15px;">- Walt Disney</p>
+            </div>
+            
+            <div class="library-content">
+                <div class="card" onclick="showModal('Learning Resources', 'Access our extensive collection of educational materials, from textbooks to research databases.')">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Learning Resources</h3>
+                    <p>Access our extensive collection of educational materials, from textbooks to research databases.</p>
+                </div>
+                
+                <div class="card" onclick="showModal('Digital Access', 'Use our computers and free Wi-Fi, or access our digital collection from anywhere with an internet connection.')">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Digital Access</h3>
+                    <p>Use our computers and free Wi-Fi, or access our digital collection from anywhere with an internet connection.</p>
+                </div>
+                
+                <div class="card" onclick="showModal('Community Events', 'Join us for author talks, workshops, book clubs, and special events for all ages throughout the year.')">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Community Events</h3>
+                    <p>Join us for author talks, workshops, book clubs, and special events for all ages throughout the year.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Other page sections (About, Nonprofit, Free Books, etc.) would go here -->
+        <!-- This example focuses on the interactive home page -->
+        
+        <div class="footer">
+            <p>© 2023 Library Reading Room | Visit us: 123 Knowledge Avenue, Learning City</p>
+            <p>A 501(c)(3) Nonprofit Organization | EIN: 12-3456789</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalContent"></p>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Create floating book icons
+        const bookIcons = ['📚', '📖', '📕', '📗', '📘', '📙', '🔖'];
+        const floatingBooks = document.getElementById('floatingBooks');
+        
+        for (let i = 0; i < 20; i++) {
+            const book = document.createElement('div');
+            book.className = 'floating-book';
+            book.textContent = bookIcons[Math.floor(Math.random() * bookIcons.length)];
+            
+            const left = Math.random() * 100;
+            const animationDuration = (Math.random() * 20) + 15;
+            const fontSize = (Math.random() * 20) + 30;
+            
+            book.style.left = `${left}%`;
+            book.style.animationDuration = `${animationDuration}s`;
+            book.style.fontSize = `${fontSize}px`;
+            book.style.opacity = 0.1 + (Math.random() * 0.3);
+            book.style.animationDelay = `${Math.random() * 5}s`;
+            
+            floatingBooks.appendChild(book);
+        }
+        
+        // Add interaction to books on the shelf
+        const books = document.querySelectorAll('.book');
+        books.forEach(book => {
+            book.addEventListener('click', function() {
+                this.style.transform = 'rotate(-5deg) scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'rotate(0deg) scale(1)';
+                }, 1000);
+            });
+        });
+        
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const pageSections = document.querySelectorAll('.page-section');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Hide all page sections
+                pageSections.forEach(section => section.classList.remove('active'));
+                
+                // Show the selected page section
+                const pageId = this.getAttribute('data-page');
+                document.getElementById(pageId).classList.add('active');
+            });
+        });
+        
+        // Reading Challenge
+        let booksRead = 0;
+        let readingGoal = 12;
+        
+        function updateProgress(count) {
+            booksRead += count;
+            if (booksRead > readingGoal) booksRead = readingGoal;
+            
+            const percentage = (booksRead / readingGoal) * 100;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+            document.getElementById('progressText').textContent = 
+                `You've read ${booksRead} out of ${readingGoal} books (${Math.round(percentage)}%)`;
+        }
+        
+        function resetProgress() {
+            booksRead = 0;
+            updateProgress(0);
+        }
+        
+        function setGoal() {
+            const newGoal = prompt('Set your reading goal for this year:', readingGoal);
+            if (newGoal && !isNaN(newGoal) && newGoal > 0) {
+                readingGoal = parseInt(newGoal);
+                updateProgress(0);
+            }
+        }
+        
+        // Initialize progress bar
+        updateProgress(0);
+        
+        // Modal functionality
+        function showModal(title, content) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalContent').textContent = content;
+            document.getElementById('bookModal').style.display = 'flex';
+        }
+        
+        function showBookDetail(genre, description) {
+            showModal(genre + ' Books', description);
+        }
+        
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('bookModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Search functionality
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-input').value;
+            if (searchTerm) {
+                showModal('Search Results', `You searched for: "${searchTerm}". In a real application, this would show results from the library database.`);
+            }
+        });
+        
+        // Allow Enter key to trigger search
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-btn').click();
+            }
+        });
+    </script>
+</body>
+</html>
