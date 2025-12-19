@@ -3,131 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>West Africa Relief | Support & Awareness</title>
+    <title>West Africa Vision 2025 | Progress & Relief</title>
     <style>
-        /* CSS - The Design */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --primary: #1a5e37; /* Forest Green - growth */
+            --secondary: #e67e22; /* Burnt Orange - action */
+            --dark: #2c3e50;
+            --light: #f4f7f6;
         }
 
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; color: #333; background: var(--light); }
+        
+        /* Navigation */
+        nav { background: white; padding: 20px 5%; display: flex; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary); }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 500; }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; }
 
-        .logo { font-size: 1.5rem; font-weight: bold; }
+        /* Economic Section */
+        .economic-box { padding: 60px 10%; background: white; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .stat-card { background: var(--light); padding: 30px; border-radius: 10px; text-align: center; border-bottom: 5px solid var(--primary); }
+        .stat-card h3 { color: var(--primary); font-size: 2rem; margin: 0; }
 
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+        /* Support/GoFundMe Section */
+        .support-section { padding: 60px 10%; text-align: center; background: var(--dark); color: white; }
+        .gofundme-placeholder { 
+            background: rgba(255,255,255,0.1); border: 2px dashed var(--secondary); padding: 40px; border-radius: 15px; margin: 30px auto; max-width: 600px;
         }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-
-        .btn-donate {
-            background: #e67e22;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
+        .btn-cta { 
+            background: var(--secondary); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: transform 0.2s;
         }
+        .btn-cta:hover { transform: scale(1.05); }
 
-        .btn-donate:hover { background: #d35400; }
-
-        .container { padding: 4rem 10%; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #777; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">West Africa Relief</div>
-        <nav>
-            <a href="#about" style="color:white; text-decoration:none; margin-left:20px;">The Crisis</a>
-            <a href="#donate" style="color:white; text-decoration:none; margin-left:20px;">Donate</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">WEST AFRICA VISION</div>
+        <div class="nav-links">
+            <a href="#economics">Economic Stability</a>
+            <a href="#support">Support Our Mission</a>
+        </div>
+    </nav>
 
     <section class="hero">
-        <h1>Support Families in West Africa</h1>
-        <p>Providing food, water, and hope to those facing displacement and hardship.</p>
-        <a href="#donate" class="btn-donate">DONATE NOW</a>
+        <h1>Resilience & Growth</h1>
+        <p>West Africa is the next global growth hub. While the economy stabilizes, we ensure no community is left behind during the transition.</p>
+        <br>
+        <a href="#support" class="btn-cta">SUPPORT THE CAUSE</a>
     </section>
 
-    <section id="about" class="container">
-        <h2 style="text-align:center;">The Current Situation</h2>
-        <p>In 2025, West Africa faces unique challenges. From the impact of regional instability to the effects of climate change on food supplies, millions are in need of basic necessities. Our goal is to provide immediate aid and long-term awareness for these resilient communities.</p>
+    <section id="economics" class="economic-box">
+        <h2 style="text-align: center;">2025 Economic Outlook</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">Despite global pressures, the West African Economic and Monetary Union (WAEMU) is projected to grow by <b>5.9% in 2025</b>. We are seeing a historic shift toward industrialization and digital trade.</p>
         
-        <div class="grid">
-            <div class="card">
-                <h3>Emergency Food Aid</h3>
-                <p>We deliver essential nutrition to families in regions hit hardest by food shortages.</p>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <h3>7.0%</h3>
+                <p>GDP Growth in Benin</p>
             </div>
-            <div class="card">
-                <h3>Clean Water Access</h3>
-                <p>Building sustainable water systems to prevent disease and support local health.</p>
+            <div class="stat-card">
+                <h3>10%</h3>
+                <p>Growth in Senegal</p>
             </div>
-            <div class="card">
-                <h3>Medical Support</h3>
-                <p>Funding mobile clinics and essential supplies for displaced populations.</p>
+            <div class="stat-card">
+                <h3>AfCFTA</h3>
+                <p>Regional Integration</p>
             </div>
         </div>
     </section>
 
-    <section id="donate" class="container" style="background:#f4f4f4; text-align:center;">
-        <h2>Make a Difference Today</h2>
-        <p>100% of public donations go directly to relief efforts on the ground.</p>
-        <div style="margin-top:20px; border: 2px dashed #999; padding: 40px;">
-            <p>[Secure Donation Gateway Embed Point]</p>
+    <section id="support" class="support-section">
+        <h2>Direct Support & Humanitarian Aid</h2>
+        <p>Economic numbers are rising, but the human cost of displacement in the Sahel remains high. Your contribution provides immediate food, water, and medical aid.</p>
+        
+        <div class="gofundme-placeholder">
+            <h3>Support Our GoFundMe</h3>
+            <p>Help us reach our goal of $50,000 for regional relief.</p>
+            <a href="YOUR_GOFUNDME_LINK_HERE" class="btn-cta">DONATE VIA GOFUNDME</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 West Africa Relief Mission. All rights reserved.</p>
+        <p>&copy; 2025 West Africa Vision Project. Data sourced from IMF and World Bank Regional Outlooks.</p>
     </footer>
 
 </body>
